@@ -1,0 +1,552 @@
+% !TeX root = main.tex
+
+\section{Basics of Probability}
+
+\hypertarget{experiments-sample-spaces-and-events}{%
+\subsection{Experiments, Sample Spaces, and
+Events}\label{experiments-sample-spaces-and-events}}
+
+\begin{itemize}
+\item
+  An \textbf{experiment} is a procedure that can be infinitely repeated
+  and has a well-defined set of outcomes.
+\item
+  An \textbf{outcome} is the result of a single trial (individual
+  repetition) of an experiment.
+\item
+  A \textbf{chance experiment} (or \textbf{random experiment}) is an
+  experiment that has more than one possible outcome and whose outcomes
+  cannot be predicted with certainty.
+\item
+  The \textbf{sample space} of a chance experiment is the set of all
+  possible outcomes.
+\item
+  An \textbf{event} is a subset of the sample space.
+\end{itemize}
+
+\begin{example}
+A classic example of chance experiment is to toss a fair coin. The following figure shows observed outcomes from an experiment of tossing a coin 100 times as well as the true probabilities of getting a head and a tail.\\ (See \url{https://seeing-theory.brown.edu})
+
+\includegraphics[width=\textwidth]{Figures/ChanceEvent.png}
+
+
+\end{example}
+
+\hypertarget{complement-intersection-and-union}{%
+\subsection{Complement, Intersection and
+Union}\label{complement-intersection-and-union}}
+
+\begin{itemize}
+\item
+  The \textbf{complement} \(E^c\) of event \(E\) is the set of all
+  outcomes in a sample space that are \textbf{NOT} included in event
+  \(E\).
+\item
+  The \textbf{intersection} \(A\cap B\) of two events \(A\) and \(B\) is
+  the set of all outcomes in the sample space that are shared by \(A\)
+  and \(B\).
+\item
+  The \textbf{union} \(A\cup B\) of two events \(A\) and \(B\) is the
+  set of all outcomes in the sample space that are either in \(A\) or
+  \(B\).
+\item
+  Two events \(A\) and \(B\) are \textbf{mutually exclusive} if there
+  intersection \(A\cap B\) is empty.
+\end{itemize}
+
+% \begin{fullwidth}
+  \begin{center}
+    \textbf{Venn Diagrams for Complement, Intersection, and Union}\\
+    \includegraphics[scale=0.6]{Figures/VennDiagrams.png}
+  \end{center}
+% \end{fullwidth}
+
+\hypertarget{classical-definition-of-probability}{%
+\subsection{Classical Definition of
+Probability}\label{classical-definition-of-probability}}
+
+\begin{itemize}
+\item
+  A \textbf{probability} \(P(E)\) is the measures of how likely an
+  outcome in the event \(E\) will occur in a chance experiment.
+\item
+  \textbf{Equally likely} means that each outcome of an experiment
+  occurs with equal chance.
+\item
+  When the outcomes in the sample space of an chance experiment are
+  \textbf{\emph{equally likely}}, the probability of an event \(E\) is
+  \[P(E)=\dfrac{\text{number of outcomes in }E}{\text{number of outcomes in }S}\]
+\item
+  Chance experiment that involves tossing fair coins, rolling fair dice
+  and drawing a card from a well-mixed deck of cards have equally likely
+  outcomes.
+\item
+  Note that many chance experiment do not have equally likely outcomes.
+  For example, the majors of students in a class are not equally likely
+  outcomes.
+\end{itemize}
+
+\begin{example}
+
+Imagine flipping one fair coin (which means the chance of a head and the
+chance of a tail are the same). What is the probability of getting the
+head.
+
+\end{example}
+\vspace*{5\baselineskip}
+
+\hypertarget{empirical-probability}{%
+\subsection{Empirical Probability}\label{empirical-probability}}
+
+\begin{itemize}
+\item
+  An \textbf{empirical (or a statistical) probability} is the relative
+  frequency of occurrence of outcomes from observations in repeated
+  experiments:
+\end{itemize}
+
+\[
+\begin{aligned}
+  P(E)=&\dfrac{\text{number of occurrence of event } E}{\text{total number of observations}}\\[0.5em]
+  =&\dfrac{\text{frequency in }E}{\text{total frequency}}.
+\end{aligned}
+\]
+
+\begin{example}
+
+A statistics class has 5 math majors and 20 other majors. If a students
+was randomly select from the class, what's the probability that the
+selected students is a math major?
+
+\end{example}
+\vspace*{4\baselineskip}
+
+\begin{exercise}
+
+  A group of people were asked if they had run a red light in the last year. 332 responded "yes", and 164 responded "no".
+
+  Find the probability that if a person is chosen at random, they have run a red light in the last year.
+
+\end{exercise}
+\vspace*{4\baselineskip}
+
+\hypertarget{theoretical-probability}{%
+\subsection{Theoretical Probability}\label{theoretical-probability}}
+
+\begin{itemize}
+\item
+  Theoretical probability is an expected value that can be calculated by
+  mathematical theory and assumptions.
+\item
+  When all outcomes in the sample space are equally likely, the
+  probability of a desired event \(E\), known as a \textbf{theoretical
+  probability}, is calculated by
+
+  \[
+  P(E)=\dfrac{\text{number of desired outcomes for event }E}{\text{number of all possible outcomes}}.
+  \]
+\item
+  \textbf{Tree diagrams} are often used for counting all possible
+  outcomes.
+\end{itemize}
+
+\begin{example}
+
+Find the probability of getting two heads when flipping a fair coins
+twice.
+
+\end{example}
+\vspace*{5\baselineskip}
+
+
+\begin{exercise}
+
+  Flipping a fair coin twice, find the probabilities of getting exactly
+  one head.
+  
+\end{exercise}
+\vspace*{5\baselineskip}
+
+% \hypertarget{empirical-vs-theoretical-coin-flip-simulation}{%
+% \subsection{Empirical vs Theoretical: Coin Flip
+% Simulation}\label{empirical-vs-theoretical-coin-flip-simulation}}
+
+% The purpose of this activity is to experiment with a simulation of
+% flipping a \textbf{fair} coin, and to see if the P(H) = 0.5.
+
+% \href{https://www.geogebra.org/material/iframe/id/112248}{}
+
+% Source: \href{http://ggbtu.be/mLZbwMZtJ}{GeoGebra} License:
+% \href{http://creativecommons.org/licenses/by/3.0/us/}{CC BY SA}
+
+\hypertarget{law-of-large-numbers}{%
+\subsection{Law of Large Numbers}\label{law-of-large-numbers}}
+
+\textbf{Law of Large Numbers:} As an experiment is repeated over and
+over, that is the number of trials getting larger and larger, the
+empirical probability of an event approaches the theoretical
+probability of the event.
+(\href{https://en.wikipedia.org/wiki/Law_of_large_numbers}{Wiki: Law
+of large numbers}.)
+
+By the law of large number, we can say that the probability of any
+event is the \textbf{long-term relative frequency} of that event.
+
+\begin{example}
+
+The following figure shows the probability of simulating coin flipping 1000 times.
+
+\includegraphics[width=0.8\textwidth]{Figures/Law-Large-Number.png}
+
+Source:
+\url{http://digitalfirst.bfwpub.com/stats_applet/stats_applet_10_prob.html}
+
+\end{example}
+
+
+\hypertarget{fundamental-properties-that-define-probability}{%
+\subsection{Fundamental Properties (that Define
+Probability)}\label{fundamental-properties-that-define-probability}}
+
+\begin{itemize}
+\item
+  \textbf{Property 1:} For an event \(E\), the probability \(P(E)\) is
+  ranged from 0 to 1: \[0\leq P(E)\leq 1.\]
+\item
+  \textbf{Property 2:} If \(S\) is the sample space, then \(P(S)=1\).
+\item
+  \textbf{Property 3:} The probability of an event
+  \(E=\{e_1,e_2, \cdots e_k\}\) of distinct outcome is equal to the sum
+  of probabilities of individual outcomes:
+  \[P(E)=P(e_1)+P(e_2)+\cdots+P(e_k)\] where \(P(e_i)\) is the
+  probability of getting the outcome \(e_i\).
+\end{itemize}
+
+\begin{remark}
+
+When an event \(E\) consists of infinitely many outcomes, the right hand
+side of the equality in Property 3 will be an infinite sum.
+
+\end{remark}
+
+
+\begin{itemize}
+\item
+  \textbf{Easy consequence 1:} If events \(A\) and \(B\) are mutually
+  exclusive, then \[P(A\cup B)=P(A)+P(B).\]
+\item
+  \textbf{Easy consequence 2:} The probability \(P(E)\) of an event
+  \(E\) and the probability \(P(E^c)\) of the complement event \(E^c\)
+  satisfies the identity: \[P(E)+P(E^c)=1.\]
+
+  Equivalently, \[
+  P(E^c)=1-P(E)\quad\text{or}\quad P(E)=1-P(E^c).
+  \]
+\end{itemize}
+
+\begin{example}
+
+A six-sided fair die is rolled. Denote by \(E\) the event of getting a
+number less than \(3\).
+
+\begin{enumerate}
+\item
+  Find the probability \(P(E)\) of the event \(E\).
+\item
+  Find the probability \(P(E^c)\) of the complement \(E^c\) of the event
+  \(E\).
+\item
+  Verify that \(P(E)+P(E^c)=1\).
+\end{enumerate}
+
+\end{example}
+
+\begin{example}
+
+Two six-sided fair dice were rolled. Find the probability of getting two
+numbers whose sum is at least 4.
+
+\end{example}
+\vspace*{5\baselineskip}
+
+\begin{exercise}
+
+Two six-sided fair dice were rolled. Find the probability of getting two numbers whose sum is at most 10.
+
+\end{exercise}
+% \vspace*{5\baselineskip}
+
+\begin{exercise}
+
+A bag of M\&M's has 4 red, 6 green, 2 blue, and 3 yellow M\&M's. What is the probability of randomly picking:
+
+\begin{enumerate}
+  \item a yellow?
+  \item a blue or green?
+  \item an orange?
+\end{enumerate}
+  
+\end{exercise}
+
+\hypertarget{the-addition-rule}{%
+\subsection{The Addition Rule}\label{the-addition-rule}}
+
+When outcomes in the sample spaces are equally likely,
+
+\begin{itemize}
+\item
+  the \textbf{probability of the intersection} of two events is \[
+  P(A\cap B)=\dfrac{\text{numbers of elements in } A\cap B}{\text{number of elements in the sample space }S}.
+  \]
+\item
+  the \textbf{probability of the union} of two events is \[
+  P(A\cup B)=\dfrac{\text{numbers of elements in } A\cup B}{\text{number of elements in the sample space }S}.
+  \]
+\end{itemize}
+
+In general, the probability of the union of two events from a chance
+experiment is defined by the basic rules and the addition rule.
+
+
+\textbf{Addition Rule:} the probability of the union of two events
+\(A\) and \(B\) is \[
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+\]
+
+\begin{example}
+  A card was randomly drew from a deck of 52 cards.
+  
+\begin{fullwidth}
+  \centering
+  \includegraphics[width=\linewidth]{Figures/Standard-52-card-from-Wikipedia.png}
+\end{fullwidth}  
+  \begin{enumerate}
+  \item
+    What's the probability of getting a heart?
+  \item
+    What's the probability of getting a face?
+  \item
+    What's the probability of getting a heart face?
+  \item
+    What's the probability of getting a heart or a face?
+  \item
+    What's the probability of getting a club and spade?
+  \end{enumerate}
+\end{example}
+
+
+
+\begin{exercise}
+
+A jar contains 10 red marbles numbered 1 to 10 and 8 blue marbles numbered 1 to 8. A marble is drawn at random from the jar. Find the probability of the given event, please show your answers as reduced fractions.
+
+\begin{enumerate}
+  \item The marble is red.
+  \item The marble is odd-numbered.
+  \item The marble is blue or even-numbered.
+  \item The marble is blue or even.
+\end{enumerate}
+
+\end{exercise}
+
+\hypertarget{the-conditional-probability}{%
+\subsection{The Conditional
+Probability}\label{the-conditional-probability}}
+
+\begin{itemize}
+\item
+  The \textbf{conditional probability} of \(A\) given \(B\), written as
+  \(P(A\mid B)\), is the probability that event \(A\) will occur given
+  that the event \(B\) has already occurred.
+\item
+  In the case that the chance experiment has equally likely outcomes,
+  the conditional probability is, \[
+  P(A\mid B)=\dfrac{\text{numbers of elements in }A\cap B}{\text{number of elements in }B}.
+  \]
+\item
+  In general, we may use fundamental rules of probability and the
+  multiplication rule to calculate the conditional probability.
+\end{itemize}
+
+\begin{example}
+
+A fair die is rolled.
+
+\begin{enumerate}
+  \item 
+  Find the probability that the number rolled is a five, given that it is odd.
+  \item
+  Find the probability that the number rolled is odd, given that it is a five.
+\end{enumerate}
+
+\end{example}
+
+\hypertarget{the-multiplication-rule}{%
+\subsection{The Multiplication Rule}\label{the-multiplication-rule}}
+
+\begin{itemize}
+\item
+  \textbf{Multiplication Rule:} the probability of the intersection of
+  two events \(A\) and \(B\) satisfies the following equality \[
+  P(A\cap B)=P(B)P(A\mid B)=P(A)P(B\mid A).
+  \]
+\item
+  The multiplication rule gives a formula for conditional probability:
+  \[
+  P(B\mid A)=\dfrac{P(A\cap B)}{P(A)}\qquad\qquad P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}.
+  \]
+\end{itemize}
+
+
+\begin{example}
+
+  Consider flipping a fair coin and rolling a fair six-sided die together.
+  
+  \begin{enumerate}
+  \item
+    What's the probability that the coin shows a head?
+  \item
+    Given that a head occurs, what's the probability that the die shows a
+    number bigger than 4?
+  \item
+    What's the probability of getting a head and a number bigger than 4?
+  \item
+    Verify that flipping a head and rolling a number bigger than 4 are
+    independent events.
+  \end{enumerate}
+  
+  \end{example}
+
+\hypertarget{independent-events}{%
+\subsection{Independent Events}\label{independent-events}}
+
+\begin{itemize}
+\item
+  Two events \(A\) and \(B\) are \textbf{independent} if \[
+  P(A\mid B)=P(A)\quad \text{ or }
+  \quad P(B)=P(B\mid A).
+  \] Equivalently, \[
+  P(A\cap B)=P(A)P(B).
+  \]
+\item
+  \textbf{Fundamental Counting Principle:} if there are \(m\) ways of
+  doing something and \(n\) ways of doing another thing independently,
+  then there are \(m\cdot n\) ways of performing both actions \emph{in
+  order}.
+\end{itemize}
+
+
+
+\begin{example}
+
+The probability that a student borrows a statistics book from the
+library is 0.3. The probability that a student borrows a biology book is
+0.4. Given that a student borrowed a biology book, the probability that
+he/she borrows a statistics book is 0.6.
+
+\begin{enumerate}
+\item
+  Find the probability that a student borrows a statistics book and a
+  biology book.
+\item
+  Find the probability that a student barrows a statistics boor or a
+  biology book.
+\end{enumerate}
+
+\end{example}
+
+\hypertarget{sampling-with-replacement-or-without-replacement}{%
+\subsection{Sampling with Replacement or without
+Replacement}\label{sampling-with-replacement-or-without-replacement}}
+
+\begin{itemize}
+\item
+  \textbf{With replacement:} If each member of a population is replaced
+  after it is picked, then that member has the possibility of being
+  chosen more than once. When sampling is done with replacement, then
+  events are considered to be independent, meaning the result of the
+  first pick will not change the probabilities for the second pick.
+\item
+  \textbf{Without replacement:} When sampling is done without
+  replacement, each member of a population may be chosen only once. In
+  this case, the probabilities for the second pick are affected by the
+  result of the first pick. The events are considered to be dependent.
+\end{itemize}
+
+\begin{example}
+
+Two cards were randomly drawn from a standard deck of 52 cards
+\emph{with replacement}. Find the probability of getting exactly one
+club card.
+
+\end{example}
+\vspace*{6\baselineskip}
+
+\begin{example}
+
+Two cards were randomly drawn from a standard deck of 52 cards without
+replacement, which means the first card will not be put back.
+
+\begin{enumerate}
+\item
+  Find the probability that getting two spades.
+\item
+  Find the probability that getting exactly one spade card.
+\end{enumerate}
+
+\end{example}
+
+\begin{exercise}
+
+A hacker is trying to guess someone's password. The hacker knows (somehow) that the password is 11 characters long, and that each character is either a lowercase letter, (a, b, c, etc), an uppercase letter (A, B, C, etc) or a numerical digit (0, 1, 2, 3, 4, 5, 6, 7, 8, or 9). Assume that the hacker makes random guesses.
+
+What is the probability that the hacker guesses the password on his first try?
+
+\end{exercise}
+\vspace*{6\baselineskip}
+
+\begin{exercise}
+
+A special deck of 16 cards has 4 that are blue, 4 yellow, 4 green, and 4
+red. The four cards of each color are numbered from one to four. A
+single card is drawn at random. Find the following probabilities.
+
+\begin{enumerate}
+\item
+  The probability that the card drawn is red.
+\item
+  The probability that the card is red, given that it is not green.
+\item
+  The probability that the card is red, given that it is neither red nor
+  yellow.
+\item
+  The probability that the card is red, given that it is not a four.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+  Use the following probabilities of event $A$ and $B$  
+  $P(A)=0.33$, $P(B)=0.47$ and $P(A\text{~and~}B)=0.20$
+  to find the probability $P(B\mid A^c)$.
+
+\end{exercise}
+\vspace*{6\baselineskip}
+
+\begin{exercise}
+
+A box contains 10 pens, 6 black and 4 red. Two pens are drawn without
+replacement, which means that the first one is not put back.
+
+\begin{enumerate}
+\item
+  What is the probability that both pens are red?
+\item
+  What is the probability that at most one pen is red?
+\item
+  What is the probability that at least one pen is red?
+\end{enumerate}
+
+\end{exercise}
+

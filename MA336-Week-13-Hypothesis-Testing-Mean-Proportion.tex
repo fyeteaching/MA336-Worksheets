@@ -1,0 +1,324 @@
+% !TeX root = main.tex
+
+\hypertarget{hypothesis-testing-for-one-sample}{%
+\section{Hypothesis Testing for One
+Sample}\label{hypothesis-testing-for-one-sample}}
+
+\hypertarget{hypothesis-testing-procedure}{%
+\subsection{Hypothesis Testing
+Procedure}\label{hypothesis-testing-procedure}}
+
+\begin{enumerate}[sepno]
+\item
+  Check if the sample size is large enough and determine if a \(Z\)-test
+  or \(T\)-test can be performed. For proportion, \(Z\)-test may be
+  used. For mean, if \(\sigma\) is known, the \(Z\)-test may be used. If
+  \(\sigma\) is unknown, the \(T\)-test may be used.
+\item
+  State the null and alternative hypothesis. The null hypothesis always
+  contains the equal sign (and possibly together with a less than or
+  greater than symbol, depending on \(H_a\).)
+\item
+  Set a significance level \(\alpha\). Commonly used levels are
+  \(\alpha=0.01\), \(\alpha=0.05\) and \(\alpha=0.1\).
+\item
+  Calculate the standardized test statistic: the \(Z\)-test statistic or
+  the \(T\)-test statistic.
+\item
+  Calculate the \(P\)-value according to the type of the test.
+
+  \begin{tabular}{cc}
+    \toprule
+    Sign in \(H_a\) & Type of Test\\
+    \midrule
+    \(\ne\) & Two-tailed\\
+    \(<\) &  Left-tailed\\
+    \(>\) & Right-tailed\\
+    \bottomrule
+  \end{tabular}
+  
+\item
+  Make a test decision about the null hypothesis \(H_0\). We reject
+  \(H_0\) if the \(P\)-value less than the significance level
+  \(\alpha\).
+\item
+  State an overall conclusion.
+\end{enumerate}
+\vspace*{-0.5\baselineskip}
+
+\begin{example}
+
+Residences on a certain street claim that the mean speed of automobiles
+run through the street is greater than the speed limit of 25 miles per
+hour. A random sample of 100 automobiles has a mean speed of 26 miles
+per hour. Assume the population standard deviation is 4 miles per hour.
+Is there enough evidence to support the claim of the residences at the
+significance level \(\alpha = 0.05\)?
+
+\end{example}
+\vspace*{6\baselineskip}
+
+\begin{example}
+
+A certain manufacturer claims that average numbers of candies in a
+certain sized bag that they produce is 20. To test the claims, you
+collected a random sample of 10 bags and find the mean is 18 and the
+standard deviation is 2.7. Assume the numbers of candies are normally
+distributed. At the significance level \(\alpha=0.05\), does your
+analysis support the manufacturer's claim?
+
+\end{example}
+\vspace*{8\baselineskip}
+
+\begin{example}
+
+An instructor would like to know if the students enrolled in a math
+course in the current semester performed better than students in the
+last semester. The mean final exam from last semester is 75.5. The final
+exam scores of 40 randomly selected 40 students were obtained
+
+\begin{fullwidth}
+  \colorbox{white}{
+    \parbox{\linewidth}{
+      \raggedleft
+      \begin{tabular}{*{20}{c}}
+        93 & 88 & 69 & 74 & 76 & 81 & 78 & 77 & 74 & 63 & 67 & 81 & 80 & 82 & 68 & 88 & 76 & 69 & 75 & 78\\
+        75 & 77 & 94 & 87 & 74 & 88 & 63 & 75 & 94 & 88 & 91 & 77 & 76 & 68 & 80 & 88 & 68 & 83 & 72 & 72
+      \end{tabular}
+    }
+  }
+\end{fullwidth}
+
+Do the data provide evidence that the students in this semester
+performed significantly better on the final than last semester?
+
+\end{example}
+\vspace*{8\baselineskip}
+
+\begin{example}
+
+Suppose you want to determine if a coin is fair. You toss the coin 50
+times and observe 16 heads and 34 tails. At the significant level 0.01,
+do you think that the coin is fair? If not, does the coin favor the head
+or tail?
+
+\end{example}
+\vspace*{8\baselineskip}
+
+\begin{example}
+
+Globally the long-term proportion of newborns who are male is 51.46\%. A
+researcher believes that the proportion of boys at birth changes under
+severe economic conditions. To test this belief randomly selected birth
+records of 5,000 babies born during a period of economic recession were
+examined. It was found in the sample that 52.55\% of the newborns were
+boys. Determine whether there is sufficient evidence, at the 10\% level
+of significance, to support the researcher's belief.
+
+\end{example}
+\vspace*{8\baselineskip}
+
+\begin{remark}
+
+In some books, the standard error of the sample distribution of sample
+proportions assuming that \(p=p_0\) is calculated using the
+approximation \[
+\sigma_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
+\]
+
+An arguable explanation is that using the above value for SE will be
+consistent with the approach to a hypothesis testing using a confidence
+interval in the case that a two-tailed test is preformed.
+
+\end{remark}
+
+\begin{example}
+
+  The mean work week for engineers in a start-up company is believed to be
+  about 60 hours. A newly hired engineer hopes that it's shorter. She asks
+  ten engineering friends in start-ups for the lengths of their mean work
+  weeks. Based on the results that follow, should she count on the mean
+  work week to be shorter than 60 hours?
+  
+  Data (length of mean work week): 70; 45; 55; 60; 65; 55; 55; 60; 50; 55.
+  
+\end{example}
+\vspace*{8\baselineskip}
+
+\hypertarget{practice}{%
+\subsection{Practice}\label{practice}}
+
+\begin{exercise}
+
+A college football coach thought that his players could bench press a
+mean weight of 275 pounds. It is known that the standard deviation is 55
+pounds. Three of his players thought that the mean weight was more than
+that amount. They asked 30 of their teammates for their estimated
+maximum lift on the bench press exercise. The mean of their maximum lift
+is 286.2.
+
+Conduct a hypothesis test using a 2.5\% level of significance to
+determine if the bench press mean is more than 275 pounds.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+In a college report, it says the mean age of students is 23.4 years old.
+An instructor thinks that the mean age is younger than 23.4. He randomly
+surveyed 50 students and found that the sample mean is 21.5 and the
+standard deviation is 1.9. At the significance level \(\alpha=0.025\),
+is there enough evidence to support the instructor's estimation?
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+A teacher believes that 85\% of students in the class will want to go on
+a field trip to the local zoo. She performs a hypothesis test to
+determine if the percentage is the same or different from 85\%. The
+teacher samples 50 students and 39 reply that they would want to go to
+the zoo. For a 1\% level of significance, would the data support the
+teacher's believe?
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+Suppose a consumer group suspects that the proportion of households that
+have three cell phones is 30\%. A cell phone company has reason to
+believe that the proportion is not 30\%. Before they start a big
+advertising campaign, they conduct a hypothesis test. Their marketing
+people survey 150 households with the result that 43 of the households
+have three cell phones.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+The average household size in a certain region several years ago was
+3.14 persons. A sociologist wishes to test, at the 5\% level of
+significance, whether it is different now. Perform the test using the
+information collected by the sociologist: in a random sample of 75
+households, the average size was 2.98 persons, with sample standard
+deviation 0.82 person.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+The mean score on a 25-point placement exam in mathematics used for the
+past two years at a large state university is 14.3. The placement
+coordinator wishes to test whether the mean score on a revised version
+of the exam differs from 14.3. She gives the revised exam to 30 entering
+freshmen early in the summer; the mean score is 14.6 with standard
+deviation 2.4. Perform the test at the 10\% level of significance.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+The average number of days to complete recovery from a particular type
+of knee operation is 123.7 days. From his experience a physician
+suspects that use of a topical pain medication might be lengthening the
+recovery time. He randomly selects the records of seven knee surgery
+patients who used the topical medication. The times to total recovery
+were:
+
+128, 135, 121, 142, 126, 151, 123
+
+Assuming a normal distribution of recovery times, perform the relevant
+test of hypotheses at the 10\% level of significance.
+
+Would the decision be the same at the 5\% level of significance?
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\hypertarget{lab-excel-functions-for-hypothesis-testing}{%
+\subsection{Lab: Excel Functions for Hypothesis
+Testing}\label{lab-excel-functions-for-hypothesis-testing}}
+
+\hypertarget{excel-functions-for-normal-distributions}{%
+\subsubsection{Excel Functions for Normal
+Distributions}\label{excel-functions-for-normal-distributions}}
+
+\begin{itemize}
+\item
+  Let \(Z\) be a standard normal random varaible. In Excel, \(P(Z<z)\)
+  is given by \texttt{NORM.S.DIST(z,TRUE)}.
+\item
+  Let \(X\) be a normal random variable with mean \(\mu\) and standard
+  deviation \(\sigma\), that is \(X\sim \mathcal{N}(\mu, \sigma^2)\). In
+  Excel, \(P(X<x)\) is given by \texttt{NORM.DIST(x,mean,sd,TRUE)}.
+\item
+  When a cumulative probability \(p=P(X<x)\) of a normal random variable
+  \(X\) is given, we can find \(x\) using\\ \texttt{NORM.INV(p,mean,sd)}.
+\item
+  When a cumulative probability \(p=P(Z<z)\) of a standard normal random
+  variable \(Z\) is given, we can find \(z\) using
+  \texttt{NORM.S.INV(p)}.
+\end{itemize}
+
+\hypertarget{excel-functions-for-t-distributions}{%
+\subsubsection{\texorpdfstring{Excel Functions for
+\(T\)-Distributions}{Excel Functions for T-Distributions}}\label{excel-functions-for-t-distributions}}
+
+Suppose a Student's \(T\)-distribution has the degree of freedom
+\(\text{df}=n-1\).
+
+\begin{itemize}
+\item
+  To find a probability for a given \(T\)-value
+
+  \begin{itemize}
+  \item
+    The area of the left tail of the \(T\)-value may be calculated by
+    the function \texttt{T.DIST(t,df,true)}.
+  \item
+    The area of the right tail of the \(T\)-value may be calculated by
+    the function \texttt{T.DIST.RT(t,\ df)}.
+  \item
+    The area of two tails of the \(T\)-value
+    (\(t > 0\)) may be calculated by
+    function \texttt{T.DIST.2T(t,df)}.
+  \end{itemize}
+\item
+  To find the critical value for a given probability \(p\)
+
+  \begin{itemize}
+  \item
+    When the area of the left tail is given, the function\\
+    \texttt{T.INV(p,df)} may be used.
+  \item
+    When the area of both tails is given, the function\\
+    \texttt{T.INV.2T(p,df)} may be used. This function is good for
+    construction confidence interval.
+  \end{itemize}
+\end{itemize}
+
+\begin{exercise}
+
+The average number of days to complete recovery from a particular type
+of knee operation is 123.7 days. From his experience a physician
+suspects that use of a topical pain medication might be lengthening the
+recovery time. He randomly selects the records of seven knee surgery
+patients who used the topical medication. The times to total recovery
+were:
+
+128, 135, 121, 142, 126, 151, 123
+
+Assuming a normal distribution of recovery times, perform the relevant
+test of hypotheses at the 10\% level of significance.
+
+Would the decision be the same at the 5\% level of significance?
+
+\end{exercise}
+
+

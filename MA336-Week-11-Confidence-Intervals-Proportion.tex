@@ -1,0 +1,273 @@
+% !TeX root = main.tex
+
+\hypertarget{confidence-interval-for-a-proportion}{%
+\subsection{Confidence Interval for a
+Proportion}}
+
+\begin{itemize}
+\item
+  Recall that the standard error of sample proportions is
+  \(\sigma_{\hat{P}}=\sqrt{\frac{p(1-p)}{n}}\), where \(n\) is the
+  sample size and \(p\) is the population proportion. As a consequence,
+  when estimating the population proportion \(p\), we only have a point
+  estimate \(\hat{p}\) (phat) to use. For the standard error, we use the
+  estimation
+  \[\sigma_{\hat{p}}\approx\hat{\sigma}_{\hat{p}}=\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}.\]
+
+\item
+  Based on the central limit theorem, when \(n\) is large enough, at the
+  \(100(1-\alpha)\%\) level, the margin of error for \(p\) is defined as
+  \[E=z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]
+  In Excel,\\
+  \begin{fullwidth}\raggedleft
+    \colorbox{white}{
+      \(z_{\alpha/2}\)=\texttt{NORM.S.INV((1\ +\ confidence\ level)/2)}.
+  
+      \footnote{\footnotesize
+        By the central limit theorem, the random variable \(\hat{p}\) is
+      normal distributed. The chance that
+      \[p\in \left[\hat{p}-z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p}+z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right]\]
+      is the same as the chance that
+      \[\hat{p}\in \left[p-z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}, p+z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}\right].\]
+      That shows \(z_{\alpha/2}\) satisfying
+      \[P(-z_{\alpha/2}<\dfrac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}<z_{\alpha/2})=1-\alpha.\]
+      }
+    }
+  \end{fullwidth}
+
+  The marginal error can also be obtained by
+
+  \begin{fullwidth}
+    \colorbox{white}{
+      \texttt{CONFIDENCE.NORM(1-confidence\ level,\ SQRT(phat*(1-phat)/n,\ n)}.
+    }
+  \end{fullwidth}
+
+\item
+  The confidence interval for \(p\) is defined by
+  \[[\hat{p}-E,\hat{p}+E]=\left[\hat{p}-z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p}+z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right],\]
+  where
+  \href{https://saylordotorg.github.io/text_introductory-statistics/s11-01-large-sample-estimation-of-a-p.html}{the
+  critical value \(z_{\alpha/2}\) satisfies that
+  \(P(Z< z_{\alpha/2})=1-\alpha/2\)} for the standard normal variable
+  \(Z\).
+\item
+  In practical, the sample size \(n\) is considered large enough if
+  \(n\hat{p}\ge 10\) and \(n(1-\hat{p})\ge 10\).
+\item
+  The above defined confidence interval is known as the
+  \href{https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval}{normal
+  approximation (or Wald's) confidence interval}. It is popular in
+  introductory statistics books. However, it is unreliable when the
+  sample size is small or the sample proportion is close to 0 or 1.
+  Indeed, if the sample proportion is 0 or 1, the confidence interval
+  defined here will have zero length.
+\end{itemize}
+
+
+
+\begin{example}
+
+In a random sample of 100 students in college, 65 said that they come to
+college by bus.
+
+\begin{enumerate}
+\item
+  Give a point estimate of the proportion of all students who come to
+  college by bus.
+\item
+  Construct a 99\% confidence interval for that proportion.
+\end{enumerate}
+
+\end{example}
+\vspace*{4\baselineskip}
+
+\begin{example}
+  
+  Foothill College's athletic department wants to calculate the proportion
+  of students who have attended a women's basketball game at the college.
+  They use student email addresses, randomly choose 220 students, and
+  email them. Of the 145 who responded, 22 had attended a women's
+  basketball game.
+  
+  Calculate and interpret the approximate 90\% confidence interval for the
+  proportion of all Foothill College students who have attended a women's
+  basketball game.
+  
+\end{example}
+\vspace*{8\baselineskip}
+
+
+\subsection{Factors Affect the Width of Confidence
+Intervals}
+
+\begin{itemize}
+\item
+  The width of a confidence interval, equals twice the standard error,
+  gives a measure of precision of the estimation.
+\item
+  Recall, for population proportion and mean,
+  \[\text{Marginal Error} = \text{Critical Value}\cdot \frac{\text{(estimated) Population SD}}{\sqrt{\text{Sample Size}}}\]
+\item
+  The formula tells us the precision of a confidence interval is
+  affected by the confidence level, the variability, and the sample
+  size.
+
+  \begin{itemize}
+  \item
+    Larger the confidence levels give larger critical values and errors.
+  \item
+    Populations (and samples) with more variability gives larger errors.
+  \item
+    Larger sample sizes give smaller errors.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{sample-size-determination}{%
+\subsection{Sample Size Determination}\label{sample-size-determination}}
+
+\begin{itemize}
+\item
+  In practice, we may desire a marginal error of \(E\). With a fixed
+  confidence level \(100(1-\alpha)\%\), the larger the sample size the
+  smaller the marginal error.
+\item
+  When estimating population proportion, if we can produce a reasonable
+  guess \(\hat{p}\) for population proportion, then an appropriate
+  minimum sample size for the study is determined by
+  \[n=\left(\frac{z_{\alpha/2}}{{E}}\right)^2\cdot \hat{p}(1-\hat{p}).\]
+\item
+  When estimating population mean, if we can produce a reasonable guess
+  \(\sigma\) for the population standard deviation, then an appropriate
+  minimum sample size is given by
+  \[n=\left(\dfrac{z_{\alpha/2}\cdot \sigma}{{E}}\right)^2.\]
+\end{itemize}
+
+\begin{example}
+
+Suppose you want to estimate the proportion of students at QCC who live
+in Queens. By surveying your classmates, you find around 70\% live in
+Queens. Use this as a guess to determine how many students would need to
+be included in a random sample if you wanted the error of margin for a
+95\% confidence interval to be less than or equal to 2\%.
+
+\end{example}
+\vspace*{8\baselineskip}
+
+\begin{example}
+
+Find the minimum sample size necessary to construct a 99\% confidence
+interval for the population mean with a margin of error \(E =0.2\).
+Assume that the estimated population standard deviation is
+\(\sigma=1.3\).
+
+\end{example}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+Out of 400 people sampled, 92 had kids. Based on this, construct a 90\%
+confidence interval for the true population proportion of people with
+kids.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+To understand the reason for returned goods, the manager of a store
+examines the records on 40 products that were returned in the last year.
+Reasons were coded by 1 for ``defective,'' 2 for ``unsatisfactory,'' and
+0 for all other reasons, with the results shown in the table.
+
+\begin{fullwidth}
+  \colorbox{white}{
+    \parbox{\linewidth}{\raggedleft
+      \begin{tabular}{*{20}{c}}
+        0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 2 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0
+      \end{tabular}
+    }}
+\end{fullwidth}
+
+\begin{enumerate}
+\item
+  Give a point estimate of the proportion of all returns that are
+  because of something wrong with the product, that is, either defective
+  or performed unsatisfactorily.
+\item
+  Construct an 80\% confidence interval for the proportion of all
+  returns that are because of something wrong with the product.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+You want to obtain a sample to estimate a population mean. Based on
+previous evidence, you believe the population standard deviation is
+approximately $\sigma=41.5$. You would like to be
+99\% confident that your esimate is within 0.5 of the true population
+mean. How large of a sample size is required?
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+Suppose a mobile phone company wants to determine the current percentage
+of customers aged 50+ who use text messaging on their cell phones. How
+many customers aged 50+ should the company survey in order to be 90\%
+confident that the estimated (sample) proportion is within three
+percentage points of the true population proportion of customers aged
+50+ who use text messaging on their cell phones.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\subsection{Lab: Confidence Interval for Proportion}
+
+\begin{itemize}
+\item
+  When a cumulative probability \(p=P(Z<z)\) of a standard normal random
+  variable \(Z\) is given, we can find \(z\) using
+  \texttt{NORM.S.INV(p)}.
+\item
+  If a sample of size \(n\) has the proportion \(\hat{p}\) and the
+  sampling distribution is approximately normal, the marginal error for
+  the proportion can be obtained by the Excel function
+  \vskip 0.5em
+  \begin{fullwidth}
+    \colorbox{white}{
+      \texttt{CONFIDENCE.NORM(1-confidence\ level,\ SQRT(phat*(1-phat)),\ n)}
+    }
+  \end{fullwidth}
+\end{itemize}
+
+\begin{exercise}
+  
+  Suppose 250 randomly selected people are surveyed to determine if they own a tablet. Of the 250 surveyed, 98 reported owning a tablet. Using a 95\% confidence level, compute a confidence interval estimate for the true proportion of people who own tablets.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+A software engineer wishes to estimate, to within 5 seconds, the mean
+time that a new application takes to start up, with 95\% confidence.
+Estimate the minimum size sample required if the standard deviation of
+start up times for similar software is 12 seconds.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+
+\begin{exercise}
+
+The administration at a college wishes to estimate, to within two
+percentage points, the proportion of all its entering freshmen who
+graduate within four years, with 90\% confidence. Estimate the minimum
+size sample required.
+
+\end{exercise}
+\vspace*{8\baselineskip}
+

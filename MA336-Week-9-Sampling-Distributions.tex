@@ -1,0 +1,381 @@
+% !TeX root = main.tex
+
+\hypertarget{sampling-distributions}{%
+\section{Sampling Distributions}\label{sampling-distributions}}
+
+\begin{itemize}
+\item
+  When using sample statistics to estimate population parameter, there
+  will be a chance error
+  \[\text{Population Parameter}=\text{Sample Statistic}+\text{Chance Error}.\]
+\item
+  To understand the chance error, we need to know how sample statistics
+  distribute. Consider samples of the same size \(n\) randomly chosen
+  from the population with replacement.
+\item
+  The probability distribution of a sample statistic is called a
+  \textbf{sampling distribution}.
+\item
+  The sampling distribution varies as the sample size changes. In
+  general, A larger sample size will result a smaller standard deviation
+  of the sampling distribution.
+\item
+  The standard deviation of a sampling distribution is also called the
+  \textbf{standard error}.
+\end{itemize}
+
+\hypertarget{central-limit-theorem-for-mean}{%
+\subsection{Central Limit Theorem for
+Mean}\label{central-limit-theorem-for-mean}}
+
+\begin{theorem}[The Central Limit Theorem]
+As the sample size \(n\) increases, the sampling distribution of the
+sample mean, from a population with the mean \(\mu\) and the standard
+deviation \(\sigma\), will approach to a normal distribution with the
+mean \(\mu_{\bar{X}}=\mu\) and the standard deviation
+\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}\).
+\end{theorem}
+
+\begin{remark}
+  \begin{itemize}
+    \item 
+  In terms of standardization, the central limit
+    theorem says that the random variable
+    \(\bar{Z}=\dfrac{\bar{x}-\mu}{\sigma/\sqrt{n}}\) has an approximately
+    standard normal distribution.
+  \item
+    For most distributions (not highly skewed), when sample size \(n>30\),
+    the sampling distribution of the sample mean \(\bar{X}\) can be
+    approximated reasonably well by a normal distribution. The larger the
+    sample size, the better the approximation will be.
+  \item
+    When the population is normally distributed, the sampling distribution of the sample means will be normally distributed for any sample size.
+  \item
+    If the population distribution is highly skewed, relying on CLT can be
+    risky.
+  \end{itemize}
+\end{remark} 
+
+See the discussion on intuitive explanation:
+\url{https://bit.ly/3dtf0q0}
+
+\begin{example}
+
+Randomly draw samples of size 2 with replacement from the numbers 1, 3,
+4.
+
+\begin{enumerate}
+\item
+  Find the sampling distribution of sample means.
+\item
+  Find the mean, and standard deviation of the sample means.
+\item
+  Find the mean, and standard deviation of the population.
+\item
+  How are the means of the population and the sampling distribution
+  related.
+\item
+  How are the standard deviations of the population and the sampling
+  distribution related.
+\end{enumerate}
+
+\end{example}
+
+\begin{example}
+
+Suppose the mean length of time that a caller is placed on hold when
+telephoning a customer service center is 23.8 seconds, with standard
+deviation 4.6 seconds. Find the probability that the mean length of time
+on hold in a random sample of 1,000 calls will be within 0.5 second of
+the population mean.
+
+\end{example}
+
+\vspace*{6\baselineskip}
+
+\begin{example}
+
+Suppose speeds of vehicles on a particular stretch of roadway are
+normally distributed with mean 36.6 mph and standard deviation 1.7 mph.
+
+\begin{enumerate}
+\item
+  Find the probability that the speed \(X\) of a randomly selected
+  vehicle is between 35 and 40 mph.
+\item
+  Find the probability that the mean speed \(\bar{X}\) of 10 randomly
+  selected vehicles is between 35 and 40 mph.
+\end{enumerate}
+
+\end{example}
+
+\hypertarget{sampling-distribution-of-a-sample-proportion}{%
+\subsection{Sampling Distribution of a Sample
+Proportion}\label{sampling-distribution-of-a-sample-proportion}}
+
+The proportion of a specific characteristic in a data set can be viewed
+as the mean of the data set by identifying the specific characteristic
+with 1 and others with \(0\).
+
+\begin{example}
+
+Consider the following data set
+
+\textbf{1}, 0, \textbf{1}, \textbf{1}, 0, 0, \textbf{1}, 0, \textbf{1},
+\textbf{1}
+
+\begin{enumerate}
+\item
+  What proportion of the numbers are in bold?
+\item
+  What's the mean of the data set?
+\item
+  Is there any relation between the proportion and the mean? If so,
+  describe it.
+\end{enumerate}
+
+\end{example}
+
+\begin{itemize}
+  \item 
+  In general, if a population consisting of 1s and 0s, then the proportion
+  \(p\) of 1s is the same as the mean. The standard deviation is
+  \[\sigma=\sqrt{(1-p)^2p+(0-p)^2(1-p)}=\sqrt{p(1-p)}.\]
+\end{itemize}
+
+\hypertarget{central-limit-theorem-for-proportion}{%
+\subsection{Central Limit Theorem for
+Proportion}\label{central-limit-theorem-for-proportion}}
+
+For a sampling distribution of sample proportion, we write \(\hat{P}\)
+for the random variable of sample proportions.
+
+\begin{theorem}
+
+\textbf{Central Limit Theorem for Proportion:}
+
+For large samples, the distribution of sample proportions \(\hat{P}\) is
+approximately normal, with the mean \(\mu_{\hat{P}}=p\) and standard
+deviation \(\sigma_{\hat{P}}=\sqrt{\frac{p(1-p)}{n}}\), where \(p\) is
+the population proportion.
+
+\end{theorem}
+
+\begin{itemize}
+\item
+  As a sample proportion is always between 0 and 1, and 99.7\% of sample
+  proportions lie within 3 standard deviation away from the population
+  proportion, when using the central limit theorem for proportion, we
+  require the sample size \(n\) satisfying the following condition: the
+  interval
+  \[\left[p-3\sqrt{\frac{p(1-p)}{n}}, p+3\sqrt{\frac{p(1-p)}{n}}\right]\]
+  lies wholly in the interval \([0, 1]\).
+\item
+  In practice, if \(n\) satisfies the following two inequalities:
+  \(np\ge 10\) and \(n(1-p)\ge 10\), then we consider \(n\) is large
+  enough for assuming that the sampling distribution of the sample
+  proportion is approximately normal.
+\item
+  When the population proportion \(p\) is unknown, to apply the central
+  limit theorem for proportion, we require the sample size \(n\)
+  satisfying the same conditions with \(p\) replaced by the sample
+  proportion \(\hat{p}\). That is, the sample size \(n\) should
+  satisfies \(n\hat{p}\ge 10\) and \(n(1-\hat{p})\ge 10\).
+\end{itemize}
+
+\begin{example}
+
+Suppose that in a population of voters in a certain region 53\% are in
+favor of a particular law. Nine hundred randomly selected voters are
+asked if they favor the law.
+
+Find the probability that the sample proportion computed from a random
+sample of size 900 will be at least 2\% above true population
+proportion.
+
+\end{example}
+
+\vspace*{6\baselineskip}
+
+\begin{example}
+
+Suppose that in 36\% of all car accidents involve injury. Find the
+probability that the injury rate in a random sample of 250 car accidents
+is between 30\% and 45\%.
+
+\end{example}
+
+\vspace*{6\baselineskip}
+
+\begin{exercise}
+
+An unknown distribution has a mean of 28 and a standard deviation 6.
+Samples of size n = 30 are drawn randomly from the population. Find the
+probability that the sample mean is between 27 and 30.
+
+\end{exercise}
+
+\vspace*{6\baselineskip}
+
+\begin{exercise}
+
+The numerical population of grade point averages at a college has mean
+2.61 and standard deviation 0.5. If a random sample of size 100 is taken
+from the population, what is the probability that the sample mean will
+be between 2.51 and 2.71?
+
+\end{exercise}
+
+\vspace*{6\baselineskip}
+
+\begin{exercise}
+
+An airline claims that 72\% of all its flights to a certain region
+arrive on time. In a random sample of 30 recent arrivals, 19 were on
+time. You may assume that the normal distribution applies.
+
+\begin{enumerate}
+\item
+  Compute the sample proportion.
+\item
+  Assuming the airline's claim is true, find the probability of a sample
+  of size 30 producing a sample proportion so low as was observed in
+  this sample.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+In a mayoral election, based on a poll, a newspaper reported that the
+current mayor received 45\% of the vote. If this is true, what is the
+probability that a random sample of 100 voters had less than 35\% voting
+for the current mayor?
+
+\end{exercise}
+
+\vspace*{6\baselineskip}
+
+\hypertarget{more-practice-on-sampling-distributions}{%
+\subsection{More Practice on Sampling
+Distributions}\label{more-practice-on-sampling-distributions}}
+
+\begin{exercise}
+
+A population has mean 73.5 and standard deviation 2.5.
+
+\begin{enumerate}
+\item
+  Find the mean and standard deviation of \(\bar{X}\) for samples of
+  size 30.
+\item
+  Find the probability that the mean of a sample of size 30 will be less
+  than 72.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+A normally distributed population has mean 57.7 and standard deviation
+12.1.
+
+\begin{enumerate}
+\item
+  Find the probability that a single randomly selected element X of the
+  population is less than 45.
+\item
+  Find the mean and standard deviation of \(\bar{X}\) for samples of
+  size 16.
+\item
+  Find the probability that the mean of a sample of size 16 drawn from
+  this population is less than 45.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+Suppose the mean amount of cholesterol in eggs labeled ``large'' is 186
+milligrams, with standard deviation 7 milligrams. Find the probability
+that the mean amount of cholesterol in a sample of 144 eggs will be
+within 2 milligrams of the population mean.
+
+\end{exercise}
+
+\vspace*{6\baselineskip}
+
+\begin{exercise}
+
+Suppose that 8\% of all males suffer some form of color blindness. Find
+the probability that in a random sample of 250 men at least 10\% will
+suffer some form of color blindness.
+  
+\end{exercise}
+
+\vspace*{6\baselineskip}
+
+\begin{exercise}
+
+An airline claims that 72\% of all its flights to a certain region
+arrive on time. In a random sample of 30 recent arrivals, 19 were on
+time. You may assume that the normal distribution applies.
+
+\begin{enumerate}
+\item
+  Compute the sample proportion.
+\item
+  Assuming the airline's claim is true, find the probability of a sample
+  of size 30 producing a sample proportion so low as was observed in
+  this sample.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+A particular fruit's weights are normally distributed, with a mean of
+663 grams and a standard deviation of 38 grams.
+If you pick 13 fruits at random, then 9\% of the time, their mean weight
+will be greater than how many grams?
+
+\end{exercise}
+
+\vspace*{2.5\baselineskip}
+
+\subsection{Lab: Normal Distributions}
+
+\begin{itemize}
+\item
+  Let \(X\) be a normal random variable with mean \(\mu\) and standard
+  deviation \(\sigma\), that is \(X\sim \mathcal{N}(\mu, \sigma^2)\). In
+  Excel, \(P(X<x)\) is given by
+  \texttt{NORM.DIST(x,\ mean,\ sd,\ TRUE)}.
+\item
+  Recall the mean of a data set can obtained by the Excel function
+  \texttt{AVERAGE()}.
+\item
+  Given the population mean \(\mu\) and standard deviation \(\sigma\),
+  if the sample size \(n\) is bigger than 30 and the sample mean is
+  \(\bar{x}\). The probability of getting another sample of the same
+  size but smaller mean can be obtained by the following Excel function:
+  \texttt{NORM.DIST(} \(\bar{x},\mu,\sigma\) \texttt{/sqrt(n),TRUE)}.
+\end{itemize}
+
+\begin{exercise}
+
+CNNBC recently reported that the mean annual cost of auto insurance is
+1035 dollars. Assume the standard deviation is 109 dollars. You will use
+a simple random sample of 83 auto insurance policies.
+
+\begin{enumerate}
+\item
+  Find the probability that a single randomly selected policy has a mean
+  value between 1028.6 and 1044.8 dollars.
+\item
+  Find the probability that a random sample of size \(n=79\) has a mean
+  value between 1028.6 and 1044.8 dollars.
+\end{enumerate}
+
+\end{exercise}
+
