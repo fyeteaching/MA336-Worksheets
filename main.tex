@@ -2,9 +2,12 @@
 
 \documentclass[12pt, twoside]{article}
 
+\newcommand{\course}{MA336}
+
 \input{style.tex}
 
-\title{MA336 Worksheets}
+
+\title{\course~Worksheet}
 \author{Dr. Ye}
 \date{}
 
@@ -13,22 +16,7 @@
 
 \begin{document}
 \newgeometry{margin=1in}
-\vspace{2\baselineskip}
-
-\begin{titlepage}
-\noBG
-\maketitle
-\vfill
-\centering{
-\small
-Last updated on \lastupdated{\today}\\
-
-License: \href{CC BY-NC-SA}{https://creativecommons.org/licenses/by-nc-sa/4.0/}
-} 
-\vspace{3\baselineskip}
-\end{titlepage}
-
-
+\input{titlepage.tex}
 \restoregeometry
 
 \input{MA336-Week-1-Statistical-Studies.tex}

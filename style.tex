@@ -49,61 +49,27 @@
 
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
-\fancyhead[RE,LO]{\bf \thetitle}
+\fancyhead[RE,LO]{\bf \course}
 % \fancyhead[RO,LE]{\thepage}
 \fancyhead[C]{\large\bf Lecture \leftmark}
 \fancyfoot[RE, LO]{\raisebox{-10\baselineskip}{\semester{\thedate}}}
 \fancyfoot[RO, LE]{\raisebox{-10\baselineskip}{\hfill \sffamily \theauthor}\hspace{-1ex}}
 \fancyfoot[C]{\raisebox{-10\baselineskip}{\thepage}}
 
-\usepackage[
-    contents={},
-    opacity=1,
-    scale=1,
-    color=black,
-    angle=0,
-    pages=some
-]{background}
-
 \usepackage{ifthen}
 \usepackage{xparse}
 \usepackage{ifoddpage}
 
-\NewDocumentCommand{\yesBG}{}{
-  \checkoddpage
-  \ifoddpage
-  \backgroundsetup{
-    contents={\rule[0em]{1.5pt}{\dimexpr \textheight+2\baselineskip}},
-    position={14.25pc,-0.475*\textheight}
-  }
-  \else
-  \backgroundsetup{
-    contents={\rule[0em]{1.5pt}{\dimexpr \textheight+2\baselineskip}},
-    position={12pc, -0.475*\textheight}
-  }
-  \fi
-  \BgMaterial
-}
+\usepackage{eso-pic}
 
-\NewDocumentCommand{\restoreBG}{}{
-  \cleardoublepage
-  \backgroundsetup{
-    opacity=1
+\NewDocumentCommand{\addBG}{}{
+  \AddToShipoutPicture{
+    \AtTextLowerLeft{
+      \put(-1pc,\LenToUnit{-\baselineskip}){
+        \rule[0em]{1.5pt}{\dimexpr \textheight+2\baselineskip}
+      }
+    }
   }
-}
-
-\NewDocumentCommand{\noBG}{}{
-  % \newpage
-  \clearpage
-  \thispagestyle{empty}
-  \backgroundsetup{
-    opacity=0
-  }
-}
-
-
-\AddEverypageHook{%
-  \yesBG
 }
 
 \NewDocumentCommand{\newlecture}{}{
@@ -111,9 +77,12 @@
   \checkoddpage
   \ifoddpage
   \else
-    \noBG
+    \clearpage
+    \thispagestyle{empty}
+    \ClearShipoutPictureBG
+    \cleardoublepage
     \newpage
-    \restoreBG
+    \addBG
   \fi
 }
 
