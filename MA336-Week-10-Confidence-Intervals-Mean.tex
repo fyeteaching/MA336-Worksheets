@@ -9,8 +9,7 @@
 \begin{itemize}
 \item
   When estimating a population parameter, we may consider the statistic
-  of a random sample as an estimate of the population parameter. But we
-  expect some chance error.
+  of a random sample as an estimate. But we expect some chance error.
 \item
   Estimating an unknown parameter by a single number calculated from a
   sample is called a \textbf{point estimation}. The single number
@@ -50,7 +49,7 @@ black pencils are in the box.
   \href{https://saylordotorg.github.io/text_introductory-statistics/s11-estimation.html}{\textbf{confidence
   level}}.
 \item
-  The 90\%, 95\% and 99\% level of confidence are frequently used in
+  The 90\%, 95\% and 99\% levels of confidence are frequently used in
   statistical study. The 95\% level of confidence is usually the
   standard choice of confidence level for scientific polls published in
   the media and online.
@@ -192,8 +191,8 @@ students at the college.
   confidence interval, the normal distribution may NOT be
   appropriate for calculating the critical value.
 \item
-  If the random variable \(\bar{x}\) is approximately normal, then the
-  random variable \(t=\dfrac{\bar{x}-\mu}{s / \sqrt{n}}\) has a
+  If the random variable \(X\) is approximately normal or the sample size $n\ge 30$, then the
+  random variable \(t=\dfrac{\bar{x}-\mu}{s / \sqrt{n}}\) has approximately a
   \textbf{\href{https://en.wikipedia.org/wiki/Student\%27s_t-distribution}{Student's
   \(t\)-distribution} with the degree of freedom \(n-1\)}.
 \end{itemize}
@@ -222,10 +221,6 @@ students at the college.
     \(t\)-distribution becomes closer to the standard normal
     distribution.
   \end{itemize}
-\item
-  In practice, when the sample size is large enough \(n>30\), people use
-  normal distribution as an approximation for the Student
-  \(t\)-distribution.
 \end{itemize}
 
 \hypertarget{confidence-intervals-for-a-mean-with-unknown-population-sd}{%
@@ -235,7 +230,7 @@ SD}{Confidence Intervals for a Mean with Unknown Population SD}}\label{confidenc
 
 \begin{itemize}
 \item
-  Suppose the sampling distribution is approximately normal. At the
+  Suppose the conditions of the central limit theorem are statisfied. At the
   confidence level \(1-\alpha\), the margin of error is
   \(E=t_{\alpha/2}\frac{s}{\sqrt{n}},\) and the confidence interval for
   a population mean \(\mu\) is
@@ -536,7 +531,7 @@ confidence level.
 
 \begin{exercise}
 
-Assuming the the population is normally distributed, Find the 99.5\%
+Assuming the the population is normally distributed. Find the 99.5\%
 confidence interval for the population mean using the following sample.
 
 97.8, 90.4, 76.9, 88.6, 97.1, 87.8, 88, 69.9, 75.3, 81.6
