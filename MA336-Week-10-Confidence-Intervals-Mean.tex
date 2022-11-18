@@ -168,7 +168,7 @@ needed in construction of a confidence interval:
 \begin{example}
 
 A random sample of 50 students from a college gives a mean GPA 2.51.
-Suppose the standard deviation of GPA of all students at the college is
+Suppose the standard deviation of GPAs of all students at the college is
 0.43. Construct a 99\% confidence interval for the mean GPA of all
 students at the college.
 
@@ -189,13 +189,15 @@ students at the college.
 \item
   When we use the estimated standard error \(s / \sqrt{n}\) to build a
   confidence interval, the normal distribution may NOT be
-  appropriate for calculating the critical value.
+  appropriate for calculating the critical value. Because the \(t\)-statistic
+  \(t=\dfrac{\bar{x}-\mu}{s / \sqrt{n}}\) is not normal in general.
 \item
-  If the random variable \(X\) is approximately normal or the sample size $n\ge 30$, then the
-  random variable \(t=\dfrac{\bar{x}-\mu}{s / \sqrt{n}}\) has approximately a
+  The random variable \(t=\dfrac{\bar{x}-\mu}{s / \sqrt{n}}\) has approximately a
   \textbf{\href{https://en.wikipedia.org/wiki/Student\%27s_t-distribution}{Student's
-  \(t\)-distribution} with the degree of freedom \(n-1\)}.
-\end{itemize}
+  \(t\)-distribution} with the degree of freedom \(n-1\)} 
+  if the random variable \(X\) is approximately normal.
+\item When the random variable $X$ is not approximately normal but not highly skewed,  people usually assume that the \(t\)-statistic is normal if the sample size is large, say, 
+the sample size $n\ge 30$.\end{itemize}
 
 \includegraphics[width=\textwidth]{Figures/t-curves}
 
@@ -230,8 +232,8 @@ SD}{Confidence Intervals for a Mean with Unknown Population SD}}\label{confidenc
 
 \begin{itemize}
 \item
-  Suppose the conditions of the central limit theorem are statisfied. At the
-  confidence level \(1-\alpha\), the margin of error is
+  Suppose the population is approximately normally distributed or not highly skewed with large sample size.
+  At the confidence level \(1-\alpha\), the margin of error is
   \(E=t_{\alpha/2}\frac{s}{\sqrt{n}},\) and the confidence interval for
   a population mean \(\mu\) is
   \[\left[\bar{x}-t_{\alpha/2}\frac{s}{\sqrt{n}}, \bar{x}+t_{\alpha/2}\frac{s}{\sqrt{n}}\right],\]
@@ -286,7 +288,7 @@ employees from several grocery stores in the county.
 Construct 99\% confidence interval for the mean worked time.
 
 \end{example}
-\vspace*{8\baselineskip}
+\vspace*{10\baselineskip}
 
 \hypertarget{choose-between-normal-distribution-and-t-distribution}{%
 \subsection{\texorpdfstring{Choose Between Normal Distribution and
@@ -306,8 +308,8 @@ Construct 99\% confidence interval for the mean worked time.
     \(t\)-\emph{distribution}.
   \end{itemize}
 \item
-  Population distribution unknown, but .gold{[}sample size is large
-  enough, i.e.~\(n>30\).
+  Population distribution unknown but \textbf{not highly skewed}. If the \textbf{sample size is large}
+  enough, i.e.~\(n>30\), then
 
   \begin{itemize}
   \item
